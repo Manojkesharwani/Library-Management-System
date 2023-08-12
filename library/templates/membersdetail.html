@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block body %}
+
+<h3 style="text-align:center;color:rgb(8, 8, 7); font-size:40px;"><b>
+        <marquee direction="left"  behavior="alternate" scrollamount="20" >Members Details</marquee>
+    </b></h3>
+<table class="table" border="1">
+    <thead style="color:rgb(6, 6, 7); text-align: center; font-size: 19px; font-style:Serif;">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Outstanding_Debt</th>
+        </tr>
+    </thead>
+    {% for data in members %}
+    <tbody>
+        <tr style="color:rgb(237, 46, 49)">
+            <td>{{data.name}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.outstanding_debt}}</td>
+                {% comment %} <a href="{% url 'edit_data' id=book.id %}" style="margin-right: 9px; "><span class="btn btn-info">update</span></a><br>
+                <a href="{% url 'delete_data' id=book.id %}" style="margin-left:4px; "><span class="btn btn-danger"
+                        onclick="return confirm('are you sure')">delete</span></a> {% endcomment %}
+            </td>
+        </tr>
+    </tbody>
+    {% endfor%}
+</table>
+
+{% endblock %}

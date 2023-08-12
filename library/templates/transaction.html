@@ -1,0 +1,19 @@
+
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+
+
+<h3 style="margin-top:10px; text-align:center; margin-right:70px; color:rgb(208, 99, 36)">Transaction Detail</h3>
+
+<div class="good-coder" style="background-color:rgb(89, 89, 235); margin-left:100px; margin-right:100px; margin-bottom:10px;">
+<form method="post" enctype="multipart/form-data" style="box-shadow: inset; margin-top:30px; margin-left:400px; ">
+    <br>{% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn btn-primary" style="margin-bottom:40px; " >submit</button>
+</form>
+</div>
+
+{% endblock %}

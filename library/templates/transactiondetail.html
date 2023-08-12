@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block body %}
+
+<h3 style="text-align:center;color:rgb(8, 8, 7); font-size:40px;"><b>
+        <marquee direction="left"  behavior="alternate" scrollamount="20" >Transaction Details</marquee>
+    </b></h3>
+<table class="table" border="1">
+    <thead style="color:rgb(6, 6, 7); text-align: center; font-size: 19px; font-style:Serif;">
+        <tr>
+            <th scope="col">Book Name</th>
+            <th scope="col">Member Name</th>
+            <th scope="col">Date of Issued</th>
+            <th scope="col">Date of Return</th>
+            <th scope="col">Book Rent Amount</th>
+        </tr>
+    </thead>
+    {% for data in xx %}
+    <tbody>
+        <tr style="color:rgb(237, 46, 49)">
+            <td>{{data.book}}</td>
+            <td>{{data.member}}</td>
+            <td>{{data.issued_date}}</td>
+            <td>{{data.returned_date}}</td>
+            <td>{{data.rent_fee}}</td>
+        </tr>
+    </tbody>
+    {% endfor%}
+</table>
+
+{% endblock %}

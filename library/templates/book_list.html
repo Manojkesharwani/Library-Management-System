@@ -1,0 +1,79 @@
+{% extends 'base.html' %} {% block body %}
+
+<h3 style="text-align:center;color:rgb(8, 8, 7); font-size:40px;"><b>
+        <marquee direction="left"  behavior="alternate" scrollamount="20" >Books Details</marquee>
+    </b></h3>
+<table class="table" border="1">
+    <!-- <form action="{% url 'search_blogs' %}" method="get">
+        {% csrf_token %}
+        <input type="text" name="q" placeholder="Search Blog">
+        <button type="submit">Search</button>
+    </form> -->
+    <thead style="color:rgb(6, 6, 7); text-align: center; font-size: 19px; font-style:Serif;">
+        <tr>
+            <th scope="col">Book Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Authors</th>
+            <!-- <th scope="col">Isbn</th> -->
+            <th scope="col">Publisher</th>
+            <th scope="col">Page Count</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+
+        </tr>
+    </thead>
+    {% for book in books %}
+    <tbody>
+        <tr style="color:rgb(237, 46, 49)">
+            <td>{{book.book_id}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.authors}}</td>
+            <!-- <td>{{book.isbn}}</td> -->
+            <td>{{book.publisher}}</td>
+            <td>{{book.page_count}}</td>
+            <td><a href="{% url 'edit_data' id=book.id %}" style="margin-right: 9px; "><span class="btn btn-info">Update</span></a><br></td>
+            <td>
+                <a href="{% url 'delete_data' id=book.id %}" style="margin-left:4px; "><span class="btn btn-danger"
+                    onclick="return confirm('are you sure')">Delete</span></a>
+            </td>
+        </tr>
+    </tbody>
+    {% endfor%}
+</table>
+
+{% endblock %}
+<!-- <!DOCTYPE html>
+    href="{% url 'edit_data' id=book.id %}"
+    href="{% url 'delete_data' id=book.id %}"
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booklist</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Book Id</th>
+            <th>Title</th>
+            <th>Authors</th>
+            <th>Isbn</th>
+            <th>Publisher</th>
+            <th>Page Count</th>
+        </tr>
+        {% for book in books %}
+        <tr>
+            <td>{{book.book_id}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.authors}}</td>
+            <td>{{book.isbn}}</td>
+            <td>{{book.publisher}}</td>
+            <td>{{book.page_count}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html> -->

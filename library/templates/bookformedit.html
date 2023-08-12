@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+
+
+<h3 style="margin-top:10px; text-align:center; margin-right:70px; color:rgb(208, 99, 36)">Update Books Details.</h3>
+
+<div class="good-coder" style="background-color:rgb(89, 89, 235); margin-left:150px; margin-right:200px; margin-bottom:20px;">
+<form method="post" enctype="multipart/form-data" style="box-shadow: inset; margin-top:20px; margin-left:400px;">
+    {% csrf_token %}
+    {{form_data.as_p}}
+    
+    <button type="Submit" class="btn btn-primary">Save</button>
+</form>
+</div>
+
+{% endblock %}
